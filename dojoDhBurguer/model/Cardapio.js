@@ -1,3 +1,5 @@
+const utils = require("../utilitarios");
+
 const cardapio = [
 	{
 		nome: "X-Burger",
@@ -27,20 +29,18 @@ const listarCardapio = () => {
 	return lista;
 };
 
-const buscarCardapio = nome => {
+const buscarItemPorNome = nomeItem => {
 	const busca = cardapio.filter((cardapio) => {
-		return cardapio.nome == nome;
+		return cardapio.nome === nomeItem;
 	});
 	return busca;
 };
 
-const adicionarItem = (nomeProduto, precoProduto, categoriaProduto) => {
-	if (nomeProduto && precoProduto && categoriaProduto) {
-		return cardapio.push({
-			nome: nomeProduto,
-			preco: precoProduto,
-			categoria: categoriaProduto,
-		});
+const adicionarItem = produto => {
+	const propsParaValidar = ["nome", "preco", "categoria",];
+
+	if (produto && utils.temProps(produto, propsParaValidar)) {
+		return cardapio.push(produto);
 	} else {
 		return false;
 	}
@@ -48,6 +48,6 @@ const adicionarItem = (nomeProduto, precoProduto, categoriaProduto) => {
 
 module.exports = {
 	listarCardapio,
-	buscarCardapio,
+	buscarItemPorNome,
 	adicionarItem,
 };
