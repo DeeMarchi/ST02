@@ -1,4 +1,4 @@
-const cardapios = [
+const cardapio = [
 	{
 		nome: "X-Burger",
 		preco: 10,
@@ -18,21 +18,26 @@ const cardapios = [
 
 const listarCardapio = () => {
 	let lista = "";
-	for (let item of cardapios) {
+	for (let item of cardapio) {
 		lista += `
 		Item: ${item.nome} <br>
 		Preço: ${item.preco} <br>
 		Categoria: ${item.categoria} <br>`;
 	}
-
 	return lista;
 };
 
-const buscarCardapio = (nome) => {
-	const busca = cardapios.filter((cardapio) => {
+const buscarCardapio = nome => {
+	const busca = cardapio.filter((cardapio) => {
 		return cardapio.nome == nome;
 	});
 	return busca;
+};
+
+const adicionarItem = (nome, preco, categoria) => {
+	if (nome && preco && categoria) {
+		
+	}
 };
 
 module.exports = {
