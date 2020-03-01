@@ -5,5 +5,5 @@ const app = express();
 app.use(route);
 
 app.listen(3000, ()=> {
-    console.log('teste')
-})
+	console.log('teste')
+});
