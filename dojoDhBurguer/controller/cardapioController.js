@@ -11,7 +11,7 @@ const cardapioController = {
 			return res.send("<p>Por favor infome algum produto que deseje procurar</p>");
 		}
 		
-		let cardapio = cardapioModel.buscarItemPorNome(nome);
+		let cardapio = cardapioModel.buscarPorCategoria(nome);
 		if(cardapio.length > 0) {
 			res.send(`${cardapio.length}`);
 		} else {

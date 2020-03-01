@@ -7,6 +7,11 @@ const cardapio = [
 		categoria: "Carne",
 	},
 	{
+		nome: "X-Bacon",
+		preco: 12,
+		categoria: "Carne",
+	},
+	{
 		nome: "Salada",
 		preco: 8,
 		categoria: "Vegano",
@@ -29,11 +34,11 @@ const listarCardapio = () => {
 	return lista;
 };
 
-const buscarItemPorNome = nomeItem => {
-	const busca = cardapio.filter(item => {
-		return item.nome.toLocaleUpperCase() === nomeItem.toLocaleUpperCase();
+const buscarPorCategoria = nomeCategoria => {
+	const resultado = cardapio.filter(item => {
+		return item.categoria.toLocaleUpperCase() === nomeCategoria.toLocaleUpperCase();
 	});
-	return busca;
+	return resultado;
 };
 
 const adicionarItem = produto => {
@@ -48,6 +53,6 @@ const adicionarItem = produto => {
 
 module.exports = {
 	listarCardapio,
-	buscarItemPorNome,
+	buscarPorCategoria,
 	adicionarItem,
 };
