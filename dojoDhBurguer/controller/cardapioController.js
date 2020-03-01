@@ -2,7 +2,7 @@ const cardapioModel = require("../model/cardapio");
 
 const cardapioController = {
 	index: (req, res) => {
-		res.send(cardapioModel.listarCardapio());
+		res.send(cardapioModel.listarCardapio(cardapioModel.cardapio));
 	},
 
 	buscar: (req, res) => {

@@ -23,15 +23,15 @@ const cardapio = [
 	},
 ];
 
-const listarCardapio = () => {
-	let lista = "";
-	for (let item of cardapio) {
-		lista += `
+const listarCardapio = lista => {
+	let conteudo = "";
+	for (let item of lista) {
+		conteudo += `
 		<p>Item: ${item.nome}</p>
 		<p>Preço: ${item.preco}</p>
 		<p>Categoria: ${item.categoria}</p>`;
 	}
-	return lista;
+	return conteudo;
 };
 
 const buscarPorCategoria = nomeCategoria => {
@@ -55,4 +55,5 @@ module.exports = {
 	listarCardapio,
 	buscarPorCategoria,
 	adicionarItem,
+	cardapio,
 };
