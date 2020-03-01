@@ -30,8 +30,8 @@ const listarCardapio = () => {
 };
 
 const buscarItemPorNome = nomeItem => {
-	const busca = cardapio.filter((cardapio) => {
-		return cardapio.nome === nomeItem;
+	const busca = cardapio.filter(item => {
+		return item.nome.toLocaleUpperCase() === nomeItem.toLocaleUpperCase();
 	});
 	return busca;
 };
