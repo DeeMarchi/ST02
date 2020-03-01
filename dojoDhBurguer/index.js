@@ -1,5 +1,5 @@
 const express = require('express');
-const route = require('./route/cardapios');
+const route = require('./route/cardapio');
 const app = express();
 
 app.use(route);
