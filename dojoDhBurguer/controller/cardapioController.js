@@ -6,14 +6,14 @@ const cardapioController = {
 	},
 
 	buscar: (req, res) => {
-		let nome = req.params.nome
+		const nome = req.params.nome
 		if (!nome) {
 			return res.send("<p>Por favor infome algum produto que deseje procurar</p>");
 		}
 		
-		let cardapio = cardapioModel.buscarPorCategoria(nome);
-		if(cardapio.length > 0) {
-			res.send(`${cardapio.length}`);
+		const itensPorCategoria = cardapioModel.buscarPorCategoria(nome);
+		if (itensPorCategoria.length > 0) {
+			res.send(cardapioModel.listarCardapio(itensPorCategoria));
 		} else {
 			res.send(`<p>Não achamos o cardapio</p>`);
 		}
